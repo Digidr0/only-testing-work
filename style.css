@@ -1,4 +1,4 @@
-:root{
+:root {
   --accent-color-primary: hsla(104, 48%, 52%, 0.75);
   --accent-color-secondary: hsla(219, 84%, 58%, 0.75);
 }
@@ -19,7 +19,7 @@ body {
 }
 .container {
   position: fixed;
-  height: max-content;
+  /* height: max-content; */
   width: 100%;
 }
 /* применяем фильтр яркости для лучшей читаемости */
@@ -37,13 +37,18 @@ body {
 }
 .active {
   background-color: var(--accent-color-primary) !important;
+  box-shadow: inset 0 0 0.4em 0 rgba(255, 255, 255, 0.3),
+    0 0 0.2em 0 var(--accent-color-primary);
 }
 .passive {
   background-color: var(--accent-color-secondary) !important;
+  box-shadow: inset 0 0 0.4em 0 rgba(255, 255, 255, 0.3),
+    0 0 0.2em 0 var(--accent-color-secondary);
 }
 
 .adaptive-btn {
-  font-size: 0.75em;
+  font-size: 1em;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,9 +59,32 @@ body {
   border-radius: 100vw;
   z-index: 2;
   position: absolute;
+  overflow: hidden;
 }
 
 .adaptive-btn.clicked {
   width: max-content;
   padding-right: 1em;
+}
+.adaptive-btn.clicked > img{
+  margin-right: 0.5em;
+}
+
+.adaptive-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  inset: 0;
+  opacity: 0;
+  margin: auto;
+
+  transition: transform 200ms ease-in-out, opacity 100ms;
+}
+.adaptive-btn:active::before {
+  opacity: 0.1;
+  transform: scale(15);
 }
