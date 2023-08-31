@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prewiew of a railroad station</title>
+</head>
+
+<body>
+    <!-- У каждой кнопки есть позиционирование x/y в виде процентного соотношения к размерам контейнера.  -->
+    <!--  Так же задается активная/пассивная кнопка и ее содержимое. (или [объект] если не указано название) -->
+    <div class="container">
+        <button class="adaptive-btn active" data-x="33" data-y="45" data-name="ж/д станция"></button>
+        <button class="adaptive-btn passive" data-x="30" data-y="26" data-name="Парковка"></button>
+        <button class="adaptive-btn passive" data-x="26" data-y="60" data-name="Пристань"></button>
+        <button class="adaptive-btn passive" data-x="56" data-y="60" data-name="Спуск"></button>
+        <button class="adaptive-btn active" data-x="68" data-y="62" data-name="Гостиница"></button>
+        <button class="adaptive-btn passive" data-x="83" data-y="66"></button>
+        <button class="adaptive-btn passive" data-x="73" data-y="43" data-name="Перрон"></button>
+        <button class="adaptive-btn active" data-x="57" data-y="72"></button>
+        
+        <img class="background-img" src="./src/railroad.png">
+    </div>
+
+</body>
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js"></script>
+
+</html>
