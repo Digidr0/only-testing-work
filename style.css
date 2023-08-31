@@ -1,6 +1,11 @@
+:root{
+  --accent-color-primary: hsla(104, 48%, 52%, 0.75);
+  --accent-color-secondary: hsla(219, 84%, 58%, 0.75);
+}
 * {
   margin: 0;
   padding: 0;
+  color: white;
 }
 html,
 body {
@@ -8,21 +13,18 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   height: 100%;
-  background-color: black !important;
-  color: white;
+  background-color: black;
   max-width: 1920px;
   min-width: 1280px;
 }
 .container {
   position: fixed;
-  width: 100%;
   height: max-content;
-}
-img {
   width: 100%;
 }
-
+/* применяем фильтр яркости для лучшей читаемости */
 .background-img {
+  width: 100%;
   filter: brightness(0.7);
 }
 .adaptive-btn > img {
@@ -34,14 +36,14 @@ img {
   pointer-events: none;
 }
 .active {
-  background-color: hsla(104, 48%, 52%, 0.75) !important;
+  background-color: var(--accent-color-primary) !important;
 }
 .passive {
-  background-color: hsla(219, 84%, 58%, 0.75);
+  background-color: var(--accent-color-secondary) !important;
 }
+
 .adaptive-btn {
   font-size: 0.75em;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,11 +53,7 @@ img {
   min-width: 3em;
   border-radius: 100vw;
   z-index: 2;
-  position: absolute !important;
-}
-
-#stadium-btn {
-  transform: translate(-50%, -50%);
+  position: absolute;
 }
 
 .adaptive-btn.clicked {
